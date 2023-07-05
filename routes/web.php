@@ -25,12 +25,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/register/create',[AdminController::class, 'create'])->name('admin.register');
 });
 
-
-
-Route::get('/', function () {
-    return view('index');
-});
-
+// User Route
 Route::get('/dashboard', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -42,3 +37,17 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+// Guest Route
+Route::get('/', function () {
+    return view('index');
+})->name('index');
+
+Route::get('/farmpedia', function () {
+    return view('farmpedia');
+})->name('farmpedia');
+
+Route::get('/workflow', function () {
+    return view('workflow');
+})->name('workflow');
