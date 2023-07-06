@@ -48,6 +48,14 @@ Route::get('/farmpedia', function () {
     return view('farmpedia');
 })->name('farmpedia');
 
+Route::get('/farmpedia-detail', function () {
+    return view('farmpedia-detail');
+})->name('farmpedia-detail');
+
 Route::get('/workflow', function () {
     return view('workflow');
 })->name('workflow');
+
+Route::get('/workflow-detail', function () {
+    return view('workflow-detail');
+})->name('workflow-detail');
