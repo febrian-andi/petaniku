@@ -27,7 +27,7 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
 
   </head>
 
@@ -101,8 +101,8 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/theme.min.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.min.js') }}"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">

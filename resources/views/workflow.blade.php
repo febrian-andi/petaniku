@@ -20,7 +20,7 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
     {{-- <link href="assets/css/theme.min.css" rel="stylesheet"> --}}
 
   </head>
@@ -31,10 +31,13 @@
       @include('layouts.navbar')
 
       <section>
+        <div class="container d-flex align-items-center justify-content-between">
+          <input type="text" class="form-control border-dark" id="search-input" placeholder="Search"/>
+          <button class="btn btn-primary" type="submit" style="background-color: #0BAC56; border-color: #0BAC56"><span class="iconify" data-icon="tabler:search"></span></button>     
+        </div>
+        @include('layouts.filter-sidebar')
+        
         <div class="container">
-          <div class="container mb-5">
-              <input type="text" class="form-control border-dark" id="search-input" placeholder="Search"/>        
-          </div>
           <div class="row flex-center">
             <div class="row">
 
@@ -50,7 +53,7 @@
                 </div>
                 @endfor
                 
-            </div>    
+            </div>
           </div>
         </div>
       </section>
@@ -59,8 +62,9 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/theme.min.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.min.js') }}"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
   </body>
