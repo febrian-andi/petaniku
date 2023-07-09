@@ -5,7 +5,15 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item px-2"><a class="nav-link fw-medium active" href="{{ route('index') }}">Home</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('farmpedia') }}">Farmpedia</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('workflow') }}">Workflow</a></li>
+            <li class="nav-item px-2 dropdown">
+                <a class="nav-link fw-medium dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Workflow
+                </a>
+                <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item bg-light" href="{{ route('workflow') }}">Panduan</a></li>
+                    <li><a class="dropdown-item bg-light" href="{{ route('alur.saya') }}">Alur Saya</a></li>
+                </ul>
+                </li>
             <li class="nav-item px-2 dropdown">
             <a class="nav-link fw-medium dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 Community
