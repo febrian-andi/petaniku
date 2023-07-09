@@ -28,7 +28,7 @@
     <main class="main" id="top">
       @include('layouts.navbar')
       
-      <section class="pb-0 mt-2">
+      <section class="pb-0 mt-3">
         <div class="container d-flex align-items-center justify-content-between">
           <input type="text" class="form-control border-dark" id="search-input" placeholder="Search"/>
           <button class="btn btn-primary" type="submit" style="background-color: #0BAC56; border-color: #0BAC56"><span class="iconify" data-icon="tabler:search"></span></button>     
@@ -38,7 +38,7 @@
         <div class="container">
 
           @foreach ( $farmpedia as $content )
-          <a class="text-decoration-none" href="{{ route('farmpedia-detail', urlencode($content->judul)) }}">
+          <a class="text-decoration-none" href="{{ route('farmpedia.detail', urlencode($content->judul)) }}">
           <div class="card border mt-4 mb-4 shadow-sm" onmouseover="this.style.backgroundColor='#eefaee';" onmouseout="this.style.backgroundColor='white'">
             <div class="card-body">
               <h3 class="fw-bold" style="color: #0BAC56">{{ $content->judul }}</h3>

@@ -60,8 +60,20 @@
       </div>
       <div class="container">
         <div class="content border">
-          <h1>Welcome to the Admin Dashboard</h1>
-          <p>This is the main content area.</p>
+          <h1>Farmpedia</h1>
+          <a href="{{ route('admin.farmpedia.create') }}" class="btn btn-primary">Tambah</a>
+        </div>
+        <div class="content">
+            @foreach($farmpedia as $content)
+            <h3>Judul: {{ $content->judul }}</h3>
+            <a href="{{ route('admin.farmpedia.edit', $content->id) }}" class="btn btn-warning">Edit</a>
+            <form action="{{ route('admin.farmpedia.destroy', $content->id) }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Hapus</button>
+            </form>
+            <hr>
+            @endforeach
         </div>
     </div>
     </div>
