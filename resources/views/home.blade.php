@@ -27,7 +27,7 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
 
   </head>
 
@@ -38,66 +38,8 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-2 bg-light" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="/index"><img class="d-inline-block align-top img-fluid" src="assets/img/gallery/logo-petaniku.png" alt="" width="40"/><span class="text-theme font-monospace fs-4 ps-2">Petaniku</span></a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item px-2"><a class="nav-link fw-medium active" href="/index">Home</a></li>
-              <li class="nav-item px-2"><a class="nav-link fw-medium" href="/farmpedia">Farmpedia</a></li>
-              <li class="nav-item px-2 dropdown">
-                <a class="nav-link fw-medium dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    Workflow
-                </a>
-                <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item bg-light" href="">Panduan</a></li>
-                    <li><a class="dropdown-item bg-light" href="">Alur Saya</a></li>
-                </ul>
-              </li>              
-              <li class="nav-item px-2 dropdown">
-                <a class="nav-link fw-medium dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    Community
-                </a>
-                <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item bg-light" href="#">Artikel</a></li>
-                    <li><a class="dropdown-item bg-light" href="#">Acara</a></li>
-                    <li><a class="dropdown-item bg-light" href="#">Forum</a></li>
-                </ul>
-              </li>
-              <li class="nav-item px-2"><a class="nav-link fw-medium" href="#contact">Market </a></li>
-            </ul>
-          </div>
-          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0 ms-11" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">   
-              <style>
-                .button-container {
-                  margin-top: 10px;
-                }
-                
-                .signup-button {
-                  background-color: #D4AF37;
-                  color: white;
-                  margin-right: 10px;
-                }
+      @include('layouts.navbar')
 
-                .login-button {
-                  background-color: #00802B;
-                  color: white;
-                  margin-right: 10px;
-                }
-              </style>
-
-              <form class="d-flex">
-                <a class="btn btn-lg bg-gradient order-0 signup-button" href="{{ route('register') }}">Sign Up</a>
-              </form>
-
-              <form class="d-flex">
-                <a class="btn btn-lg bg-gradient order-0 login-button" href="{{ route('login') }}">Log In</a>
-              </form>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <section class="py-0" id="header">
         <div class="bg-holder d-none d-md-block" style="background-image:url(assets/img/illustrations/hero-header.png);background-position:right top;background-size:contain;">
         </div>
@@ -125,6 +67,7 @@
           <div class="row flex-center h-100">
             <div class="row">
               <div class="col-md-3 mb-5">
+                <a class="text-decoration-none" href="{{ route('farmpedia')}}">
                 <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                   <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/farmpedia-icon.png" height="60" alt="" />
                     <div class="card-body">
@@ -136,8 +79,10 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-3 mb-5">
+                <a class="text-decoration-none" href="{{ route('index')}}">
                 <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                   <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/workflow-icon.png" height="60" alt="" />
                     <div class="card-body">
@@ -149,8 +94,10 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-3 mb-5">
+                <a class="text-decoration-none" href="{{ route('index')}}">
                 <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                   <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/community-icon.png" height="60" alt="" />
                     <div class="card-body">
@@ -162,8 +109,10 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-3 mb-5">
+                <a class="text-decoration-none" href="{{ route('index')}}">
                 <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                   <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/market-icon.png" height="60" alt="" />
                     <div class="card-body">
@@ -175,6 +124,7 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
           </div>
@@ -289,17 +239,10 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
-
-
-
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">

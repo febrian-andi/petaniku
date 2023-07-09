@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function () {
 
 // User Route
 Route::get('/dashboard', function () {
-    return view('index');
+    return view('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

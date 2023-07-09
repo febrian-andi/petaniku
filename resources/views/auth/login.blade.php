@@ -1,5 +1,6 @@
 <x-guest-layout>
     <!-- Session Status -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
@@ -38,8 +39,20 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+            <style>
+                .white-text {
+                    color: white !important;
+                    text-decoration: none !important;
+                }
+                .soft-yellow-button {
+                    background-color: #D4AF37 !important;
+                }       
+            </style>
+            <x-primary-button class="ml-3 soft-yellow-button">
+                <a href="/register" class="white-text">{{ __('Register') }}</a>
+            </x-primary-button>
 
-            <x-primary-button class="ml-3">
+            <x-primary-button class="ml-3 btn-success">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
