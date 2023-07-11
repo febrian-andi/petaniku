@@ -64,7 +64,7 @@
                 <h1 class="fw-bold mb-auto">{{ $panduan->judul }}</h1> 
               </div>
               <div class="text-center mt-auto">
-                <a class="btn btn-success btn-lg rounded-pill text-decoration-none" style="background-color: #4FC385" href="{{ route('alur.saya') }}">Mulai Alur</a>
+                <a class="btn btn-success btn-lg rounded-pill text-decoration-none" style="background-color: #4FC385" href="{{ route('alur.saya.create') }}">Mulai Alur</a>
               </div>
             </div>            
             {{-- <div class="col-md-6" style="height: 300px; display: grid;">

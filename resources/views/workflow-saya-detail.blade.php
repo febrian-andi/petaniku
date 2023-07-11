@@ -67,7 +67,7 @@
                 </table>
               </div>
               <div class="text-end align-self-end mt-auto">
-                <a href="{{ route('alur.saya.edit') }}" class="btn btn-success btn-lg rounded-pill" style="border:none; background-color:#D3AF37;">Edit</a>
+                <a href="{{ route('alur.saya.edit') }}" class="btn btn-success btn-lg rounded-pill ps-5 pe-5" style="border:none; background-color:#D3AF37;">Edit<span class="iconify ms-2" data-icon="mdi:edit" style="height:20px"></span></a>
               </div>
             </div>          
           </div>

@@ -68,6 +68,11 @@ class WorkflowController extends Controller
         return view('workflow-saya-detail');
     }
 
+    public function alur_saya_create()
+    {
+        return view('workflow-saya-tambah');
+    }
+
     public function alur_saya_edit()
     {
         return view('workflow-saya-edit');
