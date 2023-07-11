@@ -32,6 +32,12 @@ class FarmpediaController extends Controller
         return redirect()->route('login');
     }
 
+    public function farmpedia_detail_admin($judul)
+    {
+        $farmpedia = Farmpedia::where('judul', urldecode($judul))->first();
+        return view('admin.farmpedia.farmpedia-detail', compact('farmpedia'));
+    }
+
     public function create()
     {
         return view('admin.farmpedia.farmpedia-tambah');

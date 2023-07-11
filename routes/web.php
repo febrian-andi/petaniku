@@ -32,6 +32,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     //farmpedia
     Route::get('/farmpedia',[FarmpediaController::class, 'index_admin'])->name('admin.farmpedia');
+    Route::get('/farmpedia/{judul}', [FarmpediaController::class, 'farmpedia_detail_admin'])->name('admin.farmpedia.detail')->where('judul', '(.*)');
     Route::get('/farmpedia-tambah',[FarmpediaController::class, 'create'])->name('admin.farmpedia.create');
     Route::post('/farmpedia-store', [FarmpediaController::class, 'store'])->name('admin.farmpedia.store');
     Route::delete('/farmpedia/{id}', [FarmpediaController::class, 'destroy'])->name('admin.farmpedia.destroy');
@@ -55,6 +56,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/alur-saya', [WorkflowController::class, 'alur_saya'])->name('alur.saya');
     Route::get('/alur-saya-detail', [WorkflowController::class, 'alur_saya_detail'])->name('alur.saya.detail');
     Route::get('/alur-saya-detail/edit', [WorkflowController::class, 'alur_saya_edit'])->name('alur.saya.edit');
+    Route::get('/alur-saya-detail/create', [WorkflowController::class, 'alur_saya_create'])->name('alur.saya.create');
 });
 
 require __DIR__.'/auth.php';
