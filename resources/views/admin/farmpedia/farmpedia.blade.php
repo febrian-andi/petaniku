@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/gallery/logo-petaniku.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/gallery/logo-petaniku.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/gallery/logo-petaniku.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/gallery/logo-petaniku.png') }}">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+        
+  <title>Admin Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <title>Admin Dashboard</title>
   <style>

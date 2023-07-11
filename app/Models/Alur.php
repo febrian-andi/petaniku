@@ -12,6 +12,9 @@ class Alur extends Model
     protected $fillable = [
         'id_alur',
         'id_panduan',
+        'id',
+        'nama_alur',
+        'lahan',
         'pengingat_tgl',
     ];
 

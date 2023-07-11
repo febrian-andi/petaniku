@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('alurs', function (Blueprint $table) {
             $table->id('id_alur', 4);
             $table->unsignedBigInteger('id_panduan');
+            $table->string('nama_alur', 40);
+            $table->string('lahan',30);
             $table->foreign('id_panduan')->references('id_panduan')->on('panduans')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id');
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('pengingat_tgl',70);
+            $table->timestamp('pengingat_tgl');
             $table->timestamps();
         });
     }
