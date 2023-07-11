@@ -44,14 +44,14 @@
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item px-2"><a class="nav-link fw-medium active" href="/index">Home</a></li>
-              <li class="nav-item px-2"><a class="nav-link fw-medium" href="/farmpedia">Farmpedia</a></li>
+              <li class="nav-item px-2"><a class="nav-link fw-medium" href="/login">Farmpedia</a></li>
               <li class="nav-item px-2 dropdown">
                 <a class="nav-link fw-medium dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Workflow
                 </a>
                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item bg-light" href="">Panduan</a></li>
-                    <li><a class="dropdown-item bg-light" href="">Alur Saya</a></li>
+                    <li><a class="dropdown-item bg-light" href="/login">Panduan</a></li>
+                    <li><a class="dropdown-item bg-light" href="/login">Alur Saya</a></li>
                 </ul>
               </li>              
               <li class="nav-item px-2 dropdown">
@@ -59,9 +59,9 @@
                     Community
                 </a>
                 <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item bg-light" href="#">Artikel</a></li>
-                    <li><a class="dropdown-item bg-light" href="#">Acara</a></li>
-                    <li><a class="dropdown-item bg-light" href="#">Forum</a></li>
+                    <li><a class="dropdown-item bg-light" href="/login">Artikel</a></li>
+                    <li><a class="dropdown-item bg-light" href="/login">Acara</a></li>
+                    <li><a class="dropdown-item bg-light" href="/login">Forum</a></li>
                 </ul>
               </li>
               <li class="nav-item px-2"><a class="nav-link fw-medium" href="#contact">Market </a></li>

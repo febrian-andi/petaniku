@@ -11,7 +11,7 @@ body {
   top: 0;
   left: 0;
   background-color: white;
-  border-right: 1px solid #0094FF;
+  border-right: 1px solid #D3AF37;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -37,7 +37,7 @@ body {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #0094FF;
+  background-color: #D3AF37;
   color: white;
   border: none;
 }
@@ -59,7 +59,7 @@ body {
 </style>
 
 <div id="main">
-  <button class="openbtn btn-sm" onclick="toggleNav()"><img src="assets/img/icons/filter-icon.png" style="height:25px;"/></button>
+  <button class="openbtn btn-sm" onclick="toggleNav()"><img src="{{ asset('assets/img/icons/filter-icon.png') }}" style="height:25px;"/></button>
 </div>
 <div id="mySidebar" class="sidebar opacity-85">
   <ul class="pt-5">
@@ -78,15 +78,16 @@ function toggleNav() {
   var openBtn = document.querySelector('.openbtn');
 
   if (sidebarOpen) {
-    sidebar.style.width = "0";
-    main.style.marginLeft = "0";
-    openBtn.innerHTML = '<img src="assets/img/icons/filter-icon.png" style="height:25px;"/>';
-    sidebarOpen = false;
+  sidebar.style.width = "0";
+  main.style.marginLeft = "0";
+  openBtn.innerHTML = '<img src="{{ asset("assets/img/icons/filter-icon.png") }}" style="height:25px;"/>';
+  sidebarOpen = false;
   } else {
     sidebar.style.width = "250px";
     main.style.marginLeft = "250px";
     openBtn.innerHTML = 'X';
     sidebarOpen = true;
   }
+
 }
 </script>

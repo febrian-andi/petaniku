@@ -89,8 +89,8 @@
                     <option value="">Pilih Spesialisasi</option>
                     <option value="Pertanian" {{ old('spesialis', $user->spesialis) === 'Pertanian' ? 'selected' : '' }}>Pertanian</option>
                     <option value="Perkebunan" {{ old('spesialis', $user->spesialis) === 'Perkebunan' ? 'selected' : '' }}>Perkebunan</option>
-                    <option value="Perkebunan" {{ old('spesialis', $user->spesialis) === 'Peternakan' ? 'selected' : '' }}>Peternakan</option>
-                    <option value="Perkebunan" {{ old('spesialis', $user->spesialis) === 'Perikanan' ? 'selected' : '' }}>Perikanan</option>
+                    <option value="Perternakan" {{ old('spesialis', $user->spesialis) === 'Peternakan' ? 'selected' : '' }}>Peternakan</option>
+                    <option value="Perikanan" {{ old('spesialis', $user->spesialis) === 'Perikanan' ? 'selected' : '' }}>Perikanan</option>
                 </select>
             <x-input-error class="mt-2" :messages="$errors->get('spesialis')" />
         </div>

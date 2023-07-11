@@ -1,6 +1,12 @@
-{{-- <?php 
-  $title = "Padi/Oryza sativa";
-?> --}}
+<?php  
+    $title = 'Perawatan Lahan';
+    $isi = 'Perawatan lahan adalah serangkaian tindakan yang dilakukan untuk menjaga dan mengoptimalkan kondisi lahan agar dapat 
+            mendukung pertumbuhan dan hasil panen yang baik. Sebelum menanam padi, persiapan lahan adalah langkah pertama dalam 
+            perawatan lahan. Ini melibatkan membersihkan lahan dari gulma, sisa-sisa tanaman, dan bahan organik lainnya yang tidak 
+            diinginkan. Lahan juga dapat diberi perataan untuk memastikan permukaan tanah yang rata dan meminimalkan genangan air. 
+            Selain itu, pembenahan drainase dan pengaturan irigasi yang baik juga perlu dipertimbangkan agar tanah memiliki kondisi 
+            yang optimal untuk pertumbuhan tanaman padi.';
+?>
 
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
@@ -10,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Petaniku | Farmpedia</title>
+    <title>{{ $title }}</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/gallery/logo-petaniku.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/gallery/logo-petaniku.png">
@@ -26,27 +32,18 @@
 
   <body>
     <main class="main" id="top">
-      @include('layouts.navbar')
-      
-      <section class="pb-0 mt-3">
-        <div class="container d-flex align-items-center justify-content-between">
-          <input type="text" class="form-control border-dark" id="search-input" placeholder="Search"/>
-          <button class="btn btn-primary" type="submit" style="background-color: #0BAC56; border-color: #0BAC56"><span class="iconify" data-icon="tabler:search"></span></button>     
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-2 bg-light">
+        <a href="{{ route('back') }}"><span class="iconify ms-4" data-icon="mdi:arrow-left" style="font-size: 40px;"></span></a>
+        <div class="mx-auto text-center">
+          <h5 class="fw-light" style="color: #4fc358">{{ $title }}</h5>
         </div>
-        @include('layouts.filter-sidebar')
-        
+      </nav>
+      
+      <section class="pt-7 pb-0">
         <div class="container">
-
-          @foreach ( $farmpedia as $content )
-          <a class="text-decoration-none" href="{{ route('farmpedia.detail', urlencode($content->judul)) }}">
-          <div class="card border mt-4 mb-4 shadow-sm" onmouseover="this.style.backgroundColor='#eefaee';" onmouseout="this.style.backgroundColor='white'">
-            <div class="card-body">
-              <h3 class="fw-bold" style="color: #0BAC56">{{ $content->judul }}</h3>
+            <div class="text-justify">
+              {{ $isi }}
             </div>
-          </div>
-          </a>
-          @endforeach
-        
         </div>
       </section>
     </main>
@@ -57,7 +54,6 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="{{ asset('assets/js/theme.js') }}"></script>
-    <script src="{{ asset('assets/js/theme.min.js') }}"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">

@@ -56,15 +56,28 @@
               <a class="nav-link" href="{{ route('admin.farmpedia') }}">Farmpedia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('admin.dashboard') }}">Workflow</a>
+              <a class="nav-link" href="{{ route('admin.farmpedia') }}">Workflow</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="container">
         <div class="content border">
-          <h1>Welcome to the Admin Dashboard</h1>
-          <p>This is the main content area.</p>
+          <h1>Farmpedia</h1>
+          <a href="{{ route('admin.farmpedia.create') }}" class="btn btn-primary">Tambah</a>
+        </div>
+        <div class="content">
+            @foreach($farmpedia as $content)
+            <h3>{{ $content->judul }}</h3>
+            <h5>{{ $content->kategori }}</h5>
+            <a href="{{ route('admin.farmpedia.edit', $content->id) }}" class="btn btn-warning">Edit</a>
+            <form action="{{ route('admin.farmpedia.destroy', $content->id) }}" method="POST" class="d-inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Hapus</button>
+            </form>
+            <hr>
+            @endforeach
         </div>
     </div>
     </div>

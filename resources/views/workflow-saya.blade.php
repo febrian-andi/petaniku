@@ -1,6 +1,8 @@
 <?php
-    $title = 'Menanam Padi';
-    $image = asset('assets/img/gallery/fully-funded.png');
+    $title = 'Menanam Padi Lahan 1';
+    $image = asset('https://static.republika.co.id/uploads/images/inpicture_slide/190702155620-374.jpg');
+    $referensi_alur = 'Menanam Padi';
+    
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Petaniku | Panduan</title>
+    <title>Petaniku | Alur Saya</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/gallery/logo-petaniku.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/gallery/logo-petaniku.png">
@@ -38,21 +40,25 @@
         @include('layouts.filter-sidebar')
         
         <div class="container">
+          <h1 class="text-center fw-bold">Alur Saya</h1>
+          <hr class="mb-4">
           <div class="row flex-center">
             <div class="row">
-              @foreach($panduan as $list)
+              
+                @for($i = 1; $i <= 7; $i++)
                 <div class="col-md-3 mb-4">
-                  <a href="{{ route('workflow.detail', urlencode($list->judul)) }}" class="text-decoration-none">
-                    <div class="card shadow h-100 card-span">
+                  <a href="{{ route('alur.saya.detail') }}" class="text-decoration-none">
+                  <div class="card shadow h-100 card-span">
                       <img src="{{ $image }}" class="card-img-top" alt="..." style="height:200px; object-fit:cover;">
                       <div class="card-body">
-                        <h5 class="card-title fw-bold">{{ $list->judul }}</h5>
-                        <p class="card-text text-start mt-6">Pelajari lebih lanjut</p>
+                          <h5 class="card-title fw-bold">{{ $title }}</h5>
+                          <p class="card-text text-start mt-5">{{ $referensi_alur }}</p>
                       </div>
                     </div>
-                  </a>
+                    </a>
                 </div>
-              @endforeach
+                @endfor
+                
             </div>
           </div>
         </div>

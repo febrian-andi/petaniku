@@ -1,1 +1,1 @@
-<img src="assets/img/gallery/logo-petaniku.png" alt="" width=100 height=30;></img>
+<img src="{{ asset('assets/img/gallery/logo-petaniku.png') }}" alt="" width=100 height=30;></img>
