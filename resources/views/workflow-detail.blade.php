@@ -64,7 +64,7 @@
                 <h1 class="fw-bold mb-auto">{{ $panduan->judul }}</h1> 
               </div>
               <div class="text-center mt-auto">
-                <a class="btn btn-success btn-lg rounded-pill text-decoration-none" style="background-color: #4FC385" href="{{ route('alur.saya') }}">Mulai Alur</a>
+                <a class="btn btn-success btn-lg rounded-pill text-decoration-none" style="background-color: #4FC385" href="">Mulai Alur</a>
               </div>
             </div>            
             {{-- <div class="col-md-6" style="height: 300px; display: grid;">
@@ -72,8 +72,11 @@
                 <h1 class="fw-bold">{{ $panduan->judul }}</h1> 
               </div>
               <div class="text-end" style="grid-row: 2; align-self: end;">
-                <button class="btn btn-success btn-lg rounded-pill" style="background-color: #4FC385">Mulai Alur</button>
+                <form method="POST" action="{{ route('workflow.mulai', urlencode($panduan->judul)) }}">
+                  <button type="submit" class="btn btn-success btn-lg rounded-pill" style="background-color: #4FC385">Mulai Alur</button>
+                </form>
               </div>
+
             </div>                     --}}
           </div>
         </div>
@@ -83,17 +86,18 @@
         <div class="container">
           <div class="mt-5">
             <div class="accordion" id="taskAccordion">
-              @foreach ($materi as $index => $tahapan)
+              @foreach ($materi as $index => $materiItem)
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="task{{ $index + 1 }}Heading">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#task{{ $index + 1 }}Content" aria-expanded="true" aria-controls="task{{ $index + 1 }}Content">
-                      {{ $tahapan->tahapan }}
+                      {{ $materiItem->tahapan }}
                     </button>
                   </h2>
                   <div id="task{{ $index + 1 }}Content" class="accordion-collapse collapse" aria-labelledby="task{{ $index + 1 }}Heading" data-bs-parent="#taskAccordion">
                     <div class="accordion-body text-justify">
-                      <p class="text-limit">{{ $tahapan->isi }}</p>
-                      <p><a href="{{ route('workflow.task.detail', ['judul' => urlencode($tahapan->judul), 'tahapan' => urlencode($tahapan->tahapan)]) }}" style="color: blue;">Baca lebih lanjut</a></p>
+                      <div class="text-justify">
+                        {!! $materiItem->isi !!}
+                      </div>
                     </div>
                   </div>
                 </div>

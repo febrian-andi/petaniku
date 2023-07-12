@@ -45,19 +45,20 @@
           <div class="row flex-center">
             <div class="row">
               
-                @for($i = 1; $i <= 7; $i++)
+                @foreach($alur as $test)
                 <div class="col-md-3 mb-4">
-                  <a href="{{ route('alur.saya.detail') }}" class="text-decoration-none">
+                  <a href="{{ route('alur.saya.detail', urlencode($test->id_alur)) }}" class="text-decoration-none">
                   <div class="card shadow h-100 card-span">
                       <img src="{{ $image }}" class="card-img-top" alt="..." style="height:200px; object-fit:cover;">
                       <div class="card-body">
-                          <h5 class="card-title fw-bold">{{ $title }}</h5>
-                          <p class="card-text text-start mt-5">{{ $referensi_alur }}</p>
+                          <h5 class="card-title fw-bold">{{ $test->nama_alur }}</h5>
+                          <p>{{ $test->judul }}</p>
+                          <p class="card-text text-start mt-5">{{ $test->lahan }}</p>
                       </div>
                     </div>
                     </a>
                 </div>
-                @endfor
+                @endforeach
                 
             </div>
           </div>

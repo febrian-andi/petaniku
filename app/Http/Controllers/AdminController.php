@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
+use App\Models\User;
+use App\Models\Farmpedia;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,18 +22,18 @@ class AdminController extends Controller
 
     public function login(Request $request)
     {
-       //dd($request->all());
        if (Auth::guard('admin')->check()) {
            return redirect()->route('admin.dashboard');
        }
-
+    
        $check = $request->all();
-       if(Auth::guard('admin')->attempt(['username' => $check['username'], 'password' => $check['password']])){
+       if (Auth::guard('admin')->attempt(['username' => $check['username'], 'password' => $check['password']])) {
            return redirect()->route('admin.dashboard')->with('success', 'Admin Login Success');
        } else {
-           return back()>with('error', 'Invalid Username or Password');
+           return back()->with('error', 'Invalid Username or Password');
        }
     }
+    
 
     public function logout()
     {
@@ -40,7 +42,9 @@ class AdminController extends Controller
     }
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $userCount = User::count();
+        $farmpediaCount = Farmpedia::count();
+        return view('admin.dashboard')->with('userCount', $userCount)->with('farmpediaCount', $farmpediaCount);
     }
 
     public function register(){

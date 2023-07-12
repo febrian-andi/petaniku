@@ -32,6 +32,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     //farmpedia
     Route::get('/farmpedia',[FarmpediaController::class, 'index_admin'])->name('admin.farmpedia');
+    Route::get('/farmpedia/{judul}', [FarmpediaController::class, 'farmpedia_detail_admin'])->name('admin.farmpedia.detail')->where('judul', '(.*)');
     Route::get('/farmpedia-tambah',[FarmpediaController::class, 'create'])->name('admin.farmpedia.create');
     Route::post('/farmpedia-store', [FarmpediaController::class, 'store'])->name('admin.farmpedia.store');
     Route::delete('/farmpedia/{id}', [FarmpediaController::class, 'destroy'])->name('admin.farmpedia.destroy');
@@ -51,10 +52,12 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/farmpedia/{judul}', [FarmpediaController::class, 'farmpedia_detail'])->name('farmpedia.detail')->where('judul', '(.*)');
     Route::get('/workflow-detail/{judul}', [WorkflowController::class, 'workflow_detail'])->name('workflow.detail')->where('judul', '(.*)');
+    Route::post('/workflow-detail/{judul}/mulai', [WorkflowController::class, 'workflow_mulai'])->name('workflow.mulai')->where('judul', '(.*)');
     Route::get('/workflow-detail/{judul}/{tahapan}', [WorkflowController::class, 'workflow_task_detail'])->name('workflow.task.detail')->where('judul', '(.*)')->where('tahapan', '(.*)');
     Route::get('/alur-saya', [WorkflowController::class, 'alur_saya'])->name('alur.saya');
-    Route::get('/alur-saya-detail', [WorkflowController::class, 'alur_saya_detail'])->name('alur.saya.detail');
+    Route::get('/alur-saya-detail/{id_alur}', [WorkflowController::class, 'alur_saya_detail'])->name('alur.saya.detail')->where('id_alur', '(.*)');
     Route::get('/alur-saya-detail/edit', [WorkflowController::class, 'alur_saya_edit'])->name('alur.saya.edit');
+    Route::get('/alur-saya-detail/create', [WorkflowController::class, 'alur_saya_create'])->name('alur.saya.create');
 });
 
 require __DIR__.'/auth.php';

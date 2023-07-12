@@ -54,11 +54,12 @@
                             </select>
                         </div>
                         <textarea id="editor" name='isi'></textarea>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="p-4 text-center">
+                            <a href="{{ route('admin.farmpedia') }}" class="btn btn-danger me-2">Kembali</a>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
                     </div>
                 </form>
-                <a href="{{ route('admin.farmpedia') }}" class="btn btn-secondary">Kembali</a>
             </div>
         </section>
 
