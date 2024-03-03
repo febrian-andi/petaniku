@@ -7,6 +7,7 @@ use App\Models\Materi;
 use App\Models\Panduan;
 use App\Models\Alur;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class WorkflowController extends Controller
 {
